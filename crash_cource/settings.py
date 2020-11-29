@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     #My apps
     'learning_logs',
-    'pizzas'
+    'pizzas',
+    'meal_plans',
 ]
 
 MIDDLEWARE = [

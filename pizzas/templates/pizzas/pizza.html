@@ -1,0 +1,20 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+
+<p>You choised <em>{{ pizza }}</em></p>
+
+	<p>It has following toppings:</p>
+	<ul>
+		{% for topping in toppings %}
+		<li>
+			<p>{{ topping.name|linebreaks }}</p>
+		</li>
+		{% empty %}
+		<li>
+			There are no toppings for this topping yet.
+		</li>
+		{% endfor %}
+	</ul>
+
+{% endblock content %}

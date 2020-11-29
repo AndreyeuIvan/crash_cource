@@ -1,0 +1,24 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+
+<p> Welcome, today have following pizzas: </p>
+<p>	Please click in order to see toppings </p>
+
+	<ul>
+
+		{% for pizza in pizzas %}
+		
+			<li> 
+			<a href="{% url 'pizza' pizza.id %}">{{ pizza }}Проблема с базой, надо понять, что такое отношения один к одному и многие ко многим.</a>
+			 </li>
+
+		{% empty %}
+
+			<li> No pizza have been added yet. </li>
+
+		{% endfor %}
+
+	</ul>
+
+{% endblock content %}
