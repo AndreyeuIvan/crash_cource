@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'learning_logs',
     'pizzas',
     'meal_plans',
+    'users',
+
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/users/login'
+
+LOGOUT_REDIRECT_URL = 'login'
+
+if os.getcwd() == '/crash_cource':
+    import dj_databse_url

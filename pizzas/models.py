@@ -4,6 +4,7 @@ from django.db import models
 class Topping(models.Model):
     """Something specific about Pizza will defined here"""
     name = models.CharField(max_length=100)
+    
 
     def __str__(self):
         """Return a string representation """
@@ -21,7 +22,7 @@ class Pizza(models.Model):
         )
     name = models.CharField(max_length=200)
     size = models.CharField(max_length=10, choices=PIZZA_SIZES, default=PIZZA_SIZES[0][0])
-    toppings = models.ManyToManyField(Topping)
+    toppings = models.ManyToManyField(Topping,through='ToppingAmount', related_name='pizzas')
 
     def __str__(self):
         """Return a string representation """
@@ -36,10 +37,9 @@ class ToppingAmount(models.Model):
         (3, 'Triple'),
     )
     pizza = models.ForeignKey(Pizza, related_name='topping_amounts', on_delete=models.CASCADE)
-    toppings = models.ManyToManyField(Topping, related_name='topping_amounts')
+    toppings = models.ForeignKey('Topping', related_name='topping_amounts', on_delete=models.SET_NULL, null=True, blank=True)
     amount = models.IntegerField(choices=AMOUNT_CHOICES, default=AMOUNT_CHOICES[0][0])
 
     def __str__(self):
         """Return a string representation """
         return self.pizza.name
-
