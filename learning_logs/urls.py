@@ -4,10 +4,10 @@ from django.urls import path, re_path
 
 urlpatterns = [
 	#Home page
-	re_path(r'^$', views.home, name='learning_logs/home'),
+	#re_path(r'^$', views.home, name='learning_logs/home'),
 		
 	# Show all topics.
-	re_path(r'^topics/$', views.topics, name='topics'),
+	re_path(r'^$', views.topics, name='topics'),
 	# Detail page for a single topic
 	re_path(r'^topics/(?P<topic_id>\d+)/$', views.topic , name='topic'),
 	#Page for adding a new topic
