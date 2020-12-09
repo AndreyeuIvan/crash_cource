@@ -5,10 +5,11 @@
 <p>You choised <em>{{ pizza }}</em></p>
 
 	<p>It has following toppings:</p>
+	<p><a href="{% url 'new_topping' pizza.id %}">Add new topping</a></p>
 	<ul>
 		{% for topping in toppings %}
 		<li>
-			<p>{{ topping.name|linebreaks }}</p>
+			<p>{{ topping }}</p>
 		</li>
 		{% empty %}
 		<li>

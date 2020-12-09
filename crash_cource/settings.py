@@ -130,6 +130,3 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/users/login'
 
 LOGOUT_REDIRECT_URL = 'login'
-
-if os.getcwd() == '/crash_cource':
-    import dj_databse_url
