@@ -7,7 +7,7 @@ from .models import Pizza, Topping
 class PizzaForm(forms.ModelForm):
 	class Meta:
 		model = Pizza
-		fields = ['name']
+		fields = ['name','size', 'toppings']
 		labels = {'name': ''}
 
 
