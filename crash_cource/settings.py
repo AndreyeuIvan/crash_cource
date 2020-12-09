@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users',
 
     'django_extensions',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,8 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/users/login'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 if os.getcwd() == '/app':
     import dj_databse_url

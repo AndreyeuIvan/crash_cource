@@ -1,18 +1,27 @@
+
+
 {% extends 'learning_logs/base.html' %}
-
+{% load static %}
+{% load crispy_forms_tags %} 
 {% block content %}
-
-    {% if form.errors %}
-    <p>Your username and password did not match</p>
-    {% endif%}
-
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token%}
-        {{ form.as_p }}
-
-    <button name="submit">log in</button>
-
-    <input type="hidden" name="next" value="{% url 'topics' %}"/>
-    </form>
-
+<body class="text-center">
+   <main class="form-signin">
+      <img class="my-2 img-fluid img-thumbnail" src="https://yt3.ggpht.com/-luItXD2MKpE/AAAAAAAAAAI/AAAAAAAAAAA/P6QwBYF_EkI/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="" width="75" height="70">
+      {% if form.errors %}
+        <p>Your username and password did not match</p>
+        {% endif%}
+      <form method="post" action="{% url 'login' %}">
+         {% csrf_token%}
+         {{ form.as_p }}
+         <button class="btn btn-primary btn-lg" name="submit">log in</button>
+         <input type="hidden" name="next" value="{% url 'topics' %}"/>
+         <p class="mt-5 mb-3 text-muted">© 2017-2020</p>
+         <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+         </div>
+      </form>
+   </main>
+</body>
 {% endblock content %}
