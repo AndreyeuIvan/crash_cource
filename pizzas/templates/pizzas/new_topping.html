@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<p><a href="{% url 'new_topping' pizza.id %}">{{ pizza }}</a></p>
+	<p><a href="{% url 'new_topping' pizza.id %}">{{ pizza }}</a></p>
 
-<p>Add a new topping:</p>
+	<p>Add a new topping:</p>
 	<form action="{% url 'new_topping' pizza.id %}" method="post">
-		{% csrf_token%}
+		{% csrf_token %}
 		{{ form.as_p }}
 		<button name='submit'> add topping </button>
 	</form>

@@ -3,9 +3,28 @@
 {% block content %}
 <head>
 	<title>MEAL PLAN</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+		  $("button").click(function(){
+		    $("p").hide();
+		  });
+		});
+	</script>
+
 </head>
 
 	<p>Hello this your meal planner</p>
+
+
+	<button>Click me to hide paragraphs</button>
+	
+	<a href="{% url 'learning_logs/home' %}">come back to main page</a>
+
 	<a href="{% url 'topics' %}">come back to topics</a>
+
 {% endblock content %}
+
 

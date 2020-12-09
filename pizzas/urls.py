@@ -8,4 +8,6 @@ urlpatterns = [
 	re_path(r'^pizza/(?P<pizza_id>\d+)/$', views.pizza, name='pizza'),
 	re_path(r'^new_pizza/$', views.new_pizza, name='new_pizza'),
 	re_path(r'^new_topping/(?P<topping_id>\d+)/$', views.new_topping, name='new_topping'),
+	#Test downloaded template
+	re_path(r'^new/$', views.test, name='new'),
 		]

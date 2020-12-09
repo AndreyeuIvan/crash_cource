@@ -5,12 +5,14 @@
 <p> Welcome, today have following pizzas: </p>
 <p>	Please click in order to see toppings </p>
 
+	<p><a href="{% url 'new_pizza' %}">Add new pizza</a></p>
+
 	<ul>
 
 		{% for pizza in pizzas %}
 		
 			<li> 
-			<a href="{% url 'pizza' pizza.id %}">{{ pizza }}Проблема с базой, надо понять, что такое отношения один к одному и многие ко многим.</a>
+			<a href="{% url 'pizza' pizza.id %}">{{ pizza }}</a>
 			 </li>
 
 		{% empty %}

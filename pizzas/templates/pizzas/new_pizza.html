@@ -1,7 +1,8 @@
 {% extends 'learning_logs/base.html' %}
 
 {% block content %}
-<p>Add a new pizza:</p>
+
+<p><a href="{% url 'new_pizza' %}">Add a new pizza:</p>
 	<form action="{% url 'new_pizza' %}" method="post">
 		{% csrf_token%}
 		{{ form.as_p }}
