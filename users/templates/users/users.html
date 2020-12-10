@@ -1,12 +1,10 @@
-
-
 {% extends 'learning_logs/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %} 
 {% block content %}
 <body class="text-center">
    <main class="form-signin">
-      <img class="my-2 img-fluid img-thumbnail" src="https://yt3.ggpht.com/-luItXD2MKpE/AAAAAAAAAAI/AAAAAAAAAAA/P6QwBYF_EkI/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="" width="75" height="70">
+      <img class="my-2 img-fluid img-thumbnail" src="https://yt3.ggpht.com/-luItXD2MKpE/AAAAAAAAAAI/AAAAAAAAAAA/P6QwBYF_EkI/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="" width="100" height="90">
       {% if form.errors %}
         <p>Your username and password did not match</p>
         {% endif%}
